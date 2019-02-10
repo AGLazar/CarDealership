@@ -1,4 +1,4 @@
-package model;
+package ro.sda.dealership.model;
 
 public class Car {
     private String carId;
