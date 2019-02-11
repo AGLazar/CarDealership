@@ -1,4 +1,6 @@
-package model;
+package ro.sda.dealership.model;
+
+import ro.sda.dealership.model.Car;
 
 public class Stock {
     private int aviableStock;

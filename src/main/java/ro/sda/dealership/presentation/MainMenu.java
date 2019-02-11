@@ -4,7 +4,7 @@ public class MainMenu extends AbstractMenu {
 
 
     protected void displayOptions() {
-        System.out.println("1 - Car");
+        System.out.println("1 - Cars");
         System.out.println("2 - Clients");
         System.out.println("3 - Orders");
         System.out.println("0 - Exit");
@@ -20,11 +20,13 @@ public class MainMenu extends AbstractMenu {
                 break;
             case 2:
                 System.out.println("Clients menu");
-                Clients client = new Clients();
-                client.displayMenu();
+                ClientMenu clientMenu = new ClientMenu();
+                clientMenu.displayMenu();
                 break;
             case 3:
                 System.out.println("Order menu");
+                OrderMenu orderMenu = new OrderMenu();
+                orderMenu.displayMenu();
                 break;
             case 0:
                 System.out.println("Exiting...");
