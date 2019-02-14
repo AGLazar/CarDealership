@@ -2,37 +2,31 @@ package ro.sda.dealership.model;
 
 import ro.sda.dealership.model.Car;
 
-public class Stock {
-    private int aviableStock;
-    private String warehouse;
-    private Car car;
+public class Stock extends Car{
+    private Long quantity;
+    private String location;
 
-    public int getAviableStock() {
-        return aviableStock;
+
+
+//    public Stock(Long carId, String brand, String model, Integer price, String equipmentLevel, Car car, Long quantity, String location) {
+//        super(carId, brand, model, price, equipmentLevel);
+//        this.quantity = quantity;
+//        this.location = location;
+//    }
+
+    public Long getQuantity() {
+        return quantity;
     }
 
-    public void setAviableStock(int aviableStock) {
-        this.aviableStock = aviableStock;
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
     }
 
-    public String getWarehouse() {
-        return warehouse;
+    public String getLocation() {
+        return location;
     }
 
-    public void setWarehouse(String warehouse) {
-        this.warehouse = warehouse;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
-
-    public Stock(int aviableStock, String warehouse) {
-        this.aviableStock = aviableStock;
-        this.warehouse = warehouse;
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
