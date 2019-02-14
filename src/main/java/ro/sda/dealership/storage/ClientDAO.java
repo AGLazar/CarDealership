@@ -5,7 +5,7 @@ import ro.sda.dealership.model.Client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientDAO implements GenericDAO<Client> {
+public class  ClientDAO implements GenericDAO<Client> {
     private List<Client> clients = new ArrayList<Client>();
 
     public List<Client> findAll(){
@@ -61,5 +61,4 @@ public class ClientDAO implements GenericDAO<Client> {
         }
         return max;
     }
-
 }

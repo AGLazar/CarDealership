@@ -10,7 +10,6 @@ public abstract class AbstractMenu {
             displayOptions();
             option = readOption();
             executeCmd(option);
-
         }
     }
 
