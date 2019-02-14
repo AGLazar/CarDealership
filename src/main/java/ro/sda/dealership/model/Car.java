@@ -1,34 +1,46 @@
 package ro.sda.dealership.model;
 
 public class Car {
-    private String carId;
-    private String brand;
+    private Long carId;
+    private String make;
     private String model;
     private Integer price;
-    private String equipmentLevel;
+    private String color;
+    private String transmission;
+    private String bodyType;
+    private String driveType;
+    private Integer driveCapacity;
 
-    public Car(String carId, String brand, String model, Integer price, String equipmentLevel) {
+    public Car(Long carId, String make, String model, Integer price, String color, String transmission, String bodyType, String driveType, Integer driveCapacity) {
         this.carId = carId;
-        this.brand = brand;
+        this.make = make;
         this.model = model;
         this.price = price;
-        this.equipmentLevel = equipmentLevel;
+        this.color = color;
+        this.transmission = transmission;
+        this.bodyType = bodyType;
+        this.driveType = driveType;
+        this.driveCapacity = driveCapacity;
     }
 
-    public String getCarId() {
+    public Car(){
+
+    }
+
+    public Long getCarId() {
         return carId;
     }
 
-    public void setCarId(String carId) {
+    public void setCarId(Long carId) {
         this.carId = carId;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getMake() {
+        return make;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setMake(String make) {
+        this.make = make;
     }
 
     public String getModel() {
@@ -47,11 +59,43 @@ public class Car {
         this.price = price;
     }
 
-    public String getEquipmentLevel() {
-        return equipmentLevel;
+    public String getColor() {
+        return color;
     }
 
-    public void setEquipmentLevel(String equipmentLevel) {
-        this.equipmentLevel = equipmentLevel;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public String getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(String bodyType) {
+        this.bodyType = bodyType;
+    }
+
+    public String getDriveType() {
+        return driveType;
+    }
+
+    public void setDriveType(String driveType) {
+        this.driveType = driveType;
+    }
+
+    public Integer getDriveCapacity() {
+        return driveCapacity;
+    }
+
+    public void setDriveCapacity(Integer driveCapacity) {
+        this.driveCapacity = driveCapacity;
     }
 }

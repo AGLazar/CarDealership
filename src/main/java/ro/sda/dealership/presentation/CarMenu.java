@@ -1,6 +1,14 @@
 package ro.sda.dealership.presentation;
 
+import ro.sda.dealership.model.Car;
+import ro.sda.dealership.storage.CarDAO;
+
+import java.util.Scanner;
+
 public class CarMenu extends AbstractMenu {
+    CarDAO carDAO = new CarDAO();
+    CarReader carReader = new CarReader();
+    CarWriter carWriter = new CarWriter();
 
     protected void displayOptions() {
         System.out.println("1 - View all cars");
@@ -14,26 +22,47 @@ public class CarMenu extends AbstractMenu {
     protected void executeCmd(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of cars");
+                carWriter.writeAll(carDAO.findAll());
                 break;
             case 2:
-                System.out.println("Product cars are:");
+                displayCarsDetails();
                 break;
             case 3:
-                System.out.println("Edit car---");
+                editModel();
                 break;
             case 4:
-                System.out.println("Add a new car here:");
+                Car newCar = carReader.read();
+                carDAO.add(newCar);
                 break;
             case 5:
                 System.out.println("Select car to delete");
+                Long idOfCarToBeDeleted = new Scanner(System.in).nextLong();
+                carDAO.deleteById(idOfCarToBeDeleted);
                 break;
             case 0:
                 System.out.println("Exiting to main menu");
                 break;
             default:
                 System.out.println("Invalid option");
-
         }
+
+    }
+
+    public void displayCarsDetails() {
+        System.out.println("Choose client by Id: ");
+        Scanner scanner = new Scanner(System.in);
+        Long id = scanner.nextLong();
+        Car searcherdCar = carDAO.findById(id);
+        carWriter.write(searcherdCar);
+    }
+
+    public void editModel(){
+        System.out.println("Select id to edit: ");
+        Long id = new Scanner(System.in).nextLong();
+        System.out.println("Enter new model");
+        String newModel = new Scanner(System.in).nextLine();
+        Car car = carDAO.findById(id);
+        car.setModel(newModel);
+        carDAO.update(car);
     }
 }
