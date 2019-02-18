@@ -11,6 +11,9 @@ public class Order extends Entity{
     private String orderDetails;
     private String agent;
     private List<Car> orderedCar;
+    private Timestamp timestamp;
+    private Double finalPrice;
+    private OrderedStatus status;
 
     public List<Car> getOrderedCar() {
         return orderedCar;
@@ -19,11 +22,6 @@ public class Order extends Entity{
     public void setOrderedCar(List<Car> orderedCar) {
         this.orderedCar = orderedCar;
     }
-
-    private Timestamp timestamp;
-    private Double finalPrice;
-    private OrderedStatus status;
-
 
     public OrderedStatus getStatus() {
         return status;

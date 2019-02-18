@@ -10,6 +10,7 @@ public class CarWriter implements ConsoleWriter<Car> {
         System.out.println("Make: " + value.getMake());
         System.out.println("Model: " + value.getModel());
         System.out.println("Color: " + value.getColor());
+        System.out.println("Price: " + value.getPrice());
     }
 
     public void writeAll(List<Car> cars){
@@ -28,6 +29,8 @@ public class CarWriter implements ConsoleWriter<Car> {
         System.out.print("**Id: " + car.getId());
         System.out.print(" **Make: " + car.getMake());
         System.out.print(" **Model: " + car.getModel());
+        System.out.println(" **Color: " + car.getColor());
+        System.out.println(" **Price: " + car.getPrice());
         System.out.println();
     }
 }
